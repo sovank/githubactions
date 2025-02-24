@@ -16,8 +16,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install dependencies
-        working-directory: ./application
-      - run: npm install
+      - run: |
+          cd application /
+          npm install
       - name: Build
-        working-directory: ./application
-      - run: npm run build
+      - run: |
+          cd application /
+          npm run build
