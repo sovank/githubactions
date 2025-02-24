@@ -1,6 +1,6 @@
 name: CI/CD Pipeline for node app
 
-#on:
+on:
   #push:
     #branches:
       #- main
