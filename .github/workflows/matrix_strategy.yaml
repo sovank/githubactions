@@ -1,5 +1,5 @@
 name: Matrix Strategy
-on: 
+on:
   push:
     branches:
       - main
@@ -16,10 +16,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install dependencies
-      - run: |
-          cd application /
-          npm install
+        working-directory: ./application  # <--- Key change: working-directory
+        run: npm install
       - name: Build
-      - run: |
-          cd application /
-          npm run build
+        working-directory: ./application  # <--- Key change: working-directory
+        run: npm run build
